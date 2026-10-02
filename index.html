@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>/ SLANT — 少しゆっくり生きるための服。</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&family=Shippori+Mincho:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg1:#EEE9DC;--bg2:#C9D3D6;--bg3:#E3E7E1;--deep:#2C3A43;--ink:#1F2528;
+  --fg:#1F2528;--fg2:#4B5860;--line:rgba(31,37,40,.22);--sage:#9DB3AA;--mist:#EEF1EE;
+  --jp:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --en:"Jost","Helvetica Neue",Arial,sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#171C1F;--bg2:#222B30;--bg3:#1B2124;--fg:#E9E6DC;--fg2:#A7B3B9;--line:rgba(233,230,220,.22)}}
+:root[data-theme="dark"]{--bg1:#171C1F;--bg2:#222B30;--bg3:#1B2124;--fg:#E9E6DC;--fg2:#A7B3B9;--line:rgba(233,230,220,.22)}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg1);color:var(--fg);font-family:var(--jp);line-height:2.1;letter-spacing:.06em;-webkit-text-size-adjust:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--sage);outline-offset:3px}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+h2{font-weight:400;font-size:clamp(1.5rem,5vw,2.1rem);line-height:1.7;letter-spacing:.14em;margin:0 0 1.2em}
+p{margin:0 0 1.6em;max-width:36em}
+.en{font-family:var(--en);font-weight:300;letter-spacing:.34em;font-size:.72rem}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#F4F5F2;overflow:hidden;
+  background:linear-gradient(180deg,#7F95A3 0%,#A9BAC3 38%,#CBD3D3 62%,#D9D6CA 100%);padding:calc(48px + env(safe-area-inset-top,0px)) 24px 30vh}
+.hero svg.ridge{position:absolute;left:0;right:0;bottom:0;width:100%;height:46%}
+.hero .slash{display:block;width:1px;height:96px;background:#fff;transform:rotate(30deg);transform-origin:center;margin:0 auto 34px;animation:draw 1.4s ease-out both}
+@keyframes draw{from{height:0;opacity:0}to{height:96px;opacity:1}}
+.mark{font-family:var(--en);font-weight:200;font-size:clamp(1.3rem,5vw,1.9rem);letter-spacing:.7em;margin:0 0 30px;padding-left:.7em}
+.hero h1{font-weight:400;font-size:clamp(1.55rem,6.4vw,3rem);letter-spacing:.2em;line-height:1.6;margin:0 0 28px;text-shadow:0 1px 18px rgba(60,80,95,.35)}
+.hero .en{opacity:.92;line-height:2.2;margin:0 0 40px}
+.btn{display:inline-block;text-decoration:none;font-size:.95rem;letter-spacing:.2em;padding:.95em 2.2em;border:1px solid currentColor;transform:skewX(-14deg);transition:background .25s,color .25s}
+.btn span{display:inline-block;transform:skewX(14deg)}
+.btn:hover{background:#F4F5F2;color:#2C3A43}
+.btn.dk:hover{background:var(--fg);color:var(--bg1)}
+
+/* slash-cut sections */
+.cut{position:relative;padding:calc(5vw + 72px) 0 80px}
+.cut::before{content:"";position:absolute;left:0;right:0;top:-1px;height:5vw;background:var(--prev);clip-path:polygon(0 0,100% 0,0 100%)}
+.s-about{background:var(--bg1);--prev:#D9D6CA}
+.s-day{background:var(--bg2);--prev:var(--bg1)}
+.s-proj{background:var(--bg1);--prev:var(--bg2)}
+.s-items{background:var(--bg3);--prev:var(--bg1)}
+.s-give{background:var(--deep);color:#EEF1EE;--prev:var(--bg3)}
+.contour{display:block;width:100%;height:auto;color:var(--fg2);opacity:.55;margin:0 0 36px}
+
+/* about */
+.facts{display:grid;gap:0;margin:40px 0 0;border-top:1px solid var(--line)}
+.facts div{display:flex;gap:20px;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--line)}
+.facts dt{font-family:var(--en);font-weight:300;letter-spacing:.2em;font-size:.8rem;min-width:7em;color:var(--fg2)}
+.facts dd{margin:0}
+.tag{writing-mode:vertical-rl;font-size:1.25rem;letter-spacing:.4em;line-height:2;float:right;margin:0 0 24px 24px;padding-left:24px;border-left:1px solid var(--line)}
+
+/* day */
+.day{display:grid;gap:0;margin-top:44px}
+.day article{position:relative;padding:0 0 38px 44px;border-left:1px solid var(--line);margin-left:8px}
+.day article::before{content:"";position:absolute;left:-5px;top:.9em;width:9px;height:9px;background:var(--bg2);border:1px solid var(--fg);transform:rotate(30deg)}
+.day h3{font-weight:500;font-size:1.05rem;letter-spacing:.3em;margin:0 0 .4em}
+.day p{margin:0}
+@media(min-width:760px){
+  .day{grid-template-columns:repeat(3,1fr);gap:28px}
+  .day article{border-left:0;border-top:1px solid var(--line);margin:0;padding:34px 0 0}
+  .day article::before{left:0;top:-5px}
+}
+
+/* items */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px 16px;margin-top:44px}
+@media(min-width:760px){.grid{grid-template-columns:repeat(3,1fr);gap:36px 26px}}
+.card{text-decoration:none;display:block}
+.pic{aspect-ratio:1/1.08;display:grid;place-items:center;background:var(--mist);position:relative;clip-path:polygon(0 0,100% 0,100% 100%,9% 100%,0 91%);transition:transform .3s}
+.card:hover .pic{transform:translateY(-4px)}
+.pic svg{width:76%;height:auto}
+.card h3{font-family:var(--en);font-weight:300;letter-spacing:.14em;font-size:.88rem;margin:14px 0 0;line-height:1.6}
+.card .pr{font-size:.9rem;color:var(--fg2);line-height:1.6}
+.note{font-size:.88rem;color:var(--fg2);max-width:38em;margin-top:44px}
+.coord{font-family:var(--en);font-weight:300;letter-spacing:.2em;font-size:.78rem;border-top:1px solid var(--line);padding-top:14px;margin-top:40px;color:var(--fg2)}
+
+/* give */
+.s-give h2{color:#fff}
+.s-give p{color:#D5DDE0}
+.s-give .big{font-size:clamp(1.3rem,4.6vw,1.9rem);letter-spacing:.16em;line-height:1.9;color:#fff;margin:40px 0 44px}
+.s-give .contour{color:#9DB3AA}
+footer{background:var(--ink);color:#C9D3D6;padding:56px 0 calc(48px + env(safe-area-inset-bottom,0px));text-align:center;font-size:.85rem}
+footer .mark{color:#fff;margin-bottom:24px}
+footer nav{display:flex;flex-wrap:wrap;gap:6px 26px;justify-content:center;margin:0 0 26px}
+footer a{text-decoration:none;border-bottom:1px solid rgba(201,211,214,.35)}
+@media(prefers-reduced-motion:reduce){.hero .slash{animation:none}*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="c" viewBox="0 0 240 56" preserveAspectRatio="none">
+    <g fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round">
+      <path d="M0 6c30-4 50 6 90 2s70-8 150-2"/><path d="M0 14c34-5 56 7 100 3s66-8 140-2"/>
+      <path d="M0 22c28-3 60 8 96 4s76-9 144-3"/><path d="M0 30c36-5 52 6 98 3s68-7 142-1"/>
+      <path d="M0 38c26-2 62 7 100 3s72-8 140-2"/><path d="M0 46c34-4 54 6 94 3s74-7 146-2"/>
+      <path d="M0 53c30-3 58 4 100 2s70-5 140-1"/>
+    </g>
+  </symbol>
+</svg>
+
+<header class="hero">
+  <svg class="ridge" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <path d="M0 210 L140 150 L260 190 L420 110 L560 175 L700 120 L860 185 L1020 130 L1200 190 V400 H0Z" fill="#B3C1C8" opacity=".75"/>
+    <path d="M0 260 L170 200 L300 245 L470 170 L640 240 L800 190 L980 250 L1200 205 V400 H0Z" fill="#8FA3AE" opacity=".9"/>
+    <path d="M0 320 L120 285 L290 315 L450 265 L620 318 L790 280 L960 322 L1200 285 V400 H0Z" fill="#566B77"/>
+    <path d="M0 372 L200 350 L420 372 L640 346 L880 374 L1200 352 V400 H0Z" fill="#2C3A43"/>
+  </svg>
+  <span class="slash" aria-hidden="true"></span>
+  <p class="mark">SLANT</p>
+  <h1>少しゆっくり<br>生きるための服。</h1>
+  <p class="en">HILLSIDE DAILY WEAR<br>NABETANI, ISHIKAWA</p>
+  <a class="btn" href="https://slantshop.base.shop" target="_blank" rel="noopener"><span>ショップを見る</span></a>
+</header>
+
+<section class="cut s-about" id="about">
+  <div class="wrap">
+    <p class="tag" aria-hidden="true">山に、なじむ。暮らしに、なじむ。</p>
+    <h2>石川県能美市・鍋谷町の<br>暮らしを、着る。</h2>
+    <p>/ SLANTは、石川県能美市・鍋谷町から生まれたアパレルブランドです。</p>
+    <p>鍋谷町は、人口が減り、空き家が増える過疎の地区です。それでも最近は、古民家を改修したカフェや店舗が生まれ、町に小さな動きが起きています。消えていくかもしれなかった町に、新しい暮らしが育ちはじめている。鍋谷町は、いま、まさに変わり目にあります。</p>
+    <dl class="facts" style="clear:both">
+      <div><dt>場所</dt><dd>石川県能美市 鍋谷町</dd></div>
+      <div><dt>人口</dt><dd>140名弱の山あいの地区</dd></div>
+      <div><dt>いま</dt><dd>古民家を改修したカフェや店舗が増えている</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="cut s-day" id="day">
+  <div class="wrap">
+    <svg class="contour" viewBox="0 0 240 56" preserveAspectRatio="none" style="height:56px" aria-hidden="true"><use href="#c"/></svg>
+    <h2>ここで暮らす、一日。</h2>
+    <p>特別なことは何もない一日。けれど、そのゆるやかな時間こそが、私たちが提案したい「ここで暮らすライフスタイル」です。</p>
+    <div class="day">
+      <article><h3>朝</h3><p>山の空気を吸いながら、散歩に出る。畑をのぞいて、近所の人と立ち話をする。</p></article>
+      <article><h3>昼</h3><p>縁側で風に当たり、一息つく。</p></article>
+      <article><h3>夕</h3><p>田んぼ道をゆっくり歩いて、家へ帰る。</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="cut s-proj" id="project">
+  <div class="wrap">
+    <h2>地域の商品開発プロジェクト。</h2>
+    <p>/ SLANTは、特産品やお土産をつくることだけが商品開発ではないと考えています。土地の風景、暮らし、文化、人、時間の流れまでを編集し、新しい価値として社会へ届ける。その最初の商品が、服です。</p>
+    <p>動きやすく歩きやすい、ゆったりしたシルエット。汗をかいてもさらりと心地よいドライタッチ。毎日を気兼ねなく過ごすための、抗菌・防臭機能。アウトドアのための服ではなく、鍋谷町で暮らす一日を考えた結果、生まれた服です。</p>
+    <p>この服は、鍋谷町でつくられたものではありません。けれど、鍋谷町の暮らしを想いながらつくった服です。袖を通せば、どこにいても、少しだけ田舎の時間が流れ出す。</p>
+  </div>
+</section>
+
+<section class="cut s-items" id="items">
+  <div class="wrap">
+    <h2>鍋谷の一日から生まれた服。</h2>
+    <p>描かれているのは、山の稜線や谷を思わせる緩やかなライン。下に添えた「302 / BANCHI」は、ブランドの原点となる場所の番地です。有名な山でも観光地でもない、日々見ている名もない風景を、持ち歩く。</p>
+    <div class="grid" id="grid"></div>
+    <p class="coord">302 / BANCHI — NABETANI, NOMI, ISHIKAWA</p>
+    <p class="note">価格は税込です。サイズ・在庫・詳細はショップページをご確認ください。</p>
+  </div>
+</section>
+
+<section class="cut s-give" id="give">
+  <div class="wrap">
+    <svg class="contour" viewBox="0 0 240 56" preserveAspectRatio="none" style="height:56px" aria-hidden="true"><use href="#c"/></svg>
+    <h2>町が変わろうとしている、<br>いまだからこそ動き出すプロジェクト</h2>
+    <p>この動きを一過性で終わらせず、続くものにしたい。そんな思いから、/ SLANTは生まれました。</p>
+    <p class="big">あなたの一着が、<br>鍋谷町の次の一歩になります。</p>
+    <p>服を売って終わりではなく、売上は鍋谷町の空き家活用や新しい挑戦を支える活動に還元されます。服を着ることが、変わり目にある町を後押しすることにつながります。</p>
+    <a class="btn" href="https://slantshop.base.shop" target="_blank" rel="noopener" style="margin-top:12px"><span>ショップを見る</span></a>
+  </div>
+</section>
+
+<footer>
+  <p class="mark">SLANT</p>
+  <p class="en" style="margin:0 0 26px">FOR A SLOWER, RICHER EVERYDAY.</p>
+  <nav>
+    <a href="https://slantshop.base.shop" target="_blank" rel="noopener">ショップ</a>
+    <a href="https://www.instagram.com/slant.official.n/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://slantshop.base.shop/law" target="_blank" rel="noopener">特定商取引法に基づく表記</a>
+    <a href="https://slantshop.base.shop/privacy" target="_blank" rel="noopener">プライバシーポリシー</a>
+  </nav>
+  <small>© / SLANT</small>
+</footer>
+
+<script>
+var items=[
+ {t:'tee',bg:'#26364A',pr:'#DCE3E6',n:'T-shirts (navy)',p:'4,730',u:'158171128'},
+ {t:'tee',bg:'#1F2528',pr:'#DCE3E6',n:'T-shirts (black)',p:'4,730',u:'158171172'},
+ {t:'tote',bg:'#E9E1CF',pr:'#9A9484',n:'Tote bag (natural)',p:'2,820',u:'158171573'},
+ {t:'tote',bg:'#A9C1C4',pr:'#EEF3F2',n:'Tote bag (light blue)',p:'2,820',u:'158171514'},
+ {t:'tote',bg:'#1F2528',pr:'#DCE3E6',n:'Tote bag (black)',p:'2,820',u:'158171363'},
+ {t:'cap',bg:'#1F2528',pr:'#DCE3E6',n:'Shade cap (black)',p:'8,910',u:'158171699'}
+];
+var shape={
+ tee:function(i){return '<path d="M32 14 52 6q8 12 16 0l20 8 14 26-16 6v50H34V46L18 40Z" fill="'+i.bg+'"/><svg x="46" y="46" width="28" height="22" color="'+i.pr+'"><use href="#c"/></svg>'},
+ tote:function(i){return '<path d="M44 40V30a16 16 0 0 1 32 0v10" fill="none" stroke="'+i.bg+'" stroke-width="3"/><path d="M26 40h68l5 66H21Z" fill="'+i.bg+'"/><svg x="40" y="58" width="40" height="30" color="'+i.pr+'"><use href="#c"/></svg>'},
+ cap:function(i){return '<path d="M20 70q0-40 40-40t40 40Z" fill="'+i.bg+'"/><path d="M20 70h96q0 8-12 8H30Z" fill="'+i.bg+'"/><path d="M52 58l14-22" stroke="'+i.pr+'" stroke-width="1.2"/>'}
+};
+document.getElementById('grid').innerHTML=items.map(function(i){
+ return '<a class="card" target="_blank" rel="noopener" href="https://slantshop.base.shop/items/'+i.u+'"><div class="pic"><svg viewBox="0 0 120 112" role="img" aria-label="'+i.n+'">'+shape[i.t](i)+'</svg></div><h3>'+i.n+'</h3><div class="pr">¥'+i.p+'</div></a>';
+}).join('');
+</script>
+</body>
+</html>
